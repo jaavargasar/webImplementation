@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit() {
-    this.service.showPictures();
+    this.service.showUsers();
 
   }
 
@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
     this.users = this.service.users;
   }
 
-  goToUser(userName){
-    console.log(userName.toString());
+  goToUser(userID){
+    this.service.showPost(userID.toString());
   }
 }

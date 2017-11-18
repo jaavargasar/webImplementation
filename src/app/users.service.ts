@@ -4,12 +4,15 @@ import {User} from "./home/user";
 import {Http,Response} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
+import {Post} from "./page/post";
 
 
 @Injectable()
 export class UsersService {
 
   users: User[];
+  posts: Post[];
+
   constructor(private http: Http) {
     // this.users=[
     //   {name:"andres vargas",id:"123"},
@@ -19,31 +22,36 @@ export class UsersService {
 
   }
 
-  showPictures(){
+  showUsers(){
     console.log("showing json users response");
-    this.getPictures().subscribe(
+    this.getUsers().subscribe(
       response => this.users = response,
       error => console.log(error)
     )
-
-    //console.log("now showing the response manually");
   }
 
-  // getPictures() : Observable<any>{
-  //   return this.http
-  //     .get("http://jsonplaceholder.typicode.com/users")
-  //     .map((response: Response) => response.json())
-  //     .catch((error: any) => Observable.throw(error.json().error || 'Server error getpictures'));
-  // }
+  showPost(keyword: string){
+    console.log("showing json post response");
+    this.getPosts(keyword).subscribe(
+      response => console.log(response.json()),
+      error => console.log(error)
+    )
+  }
 
-  getPictures() : Observable<any>{
+  getUsers() : Observable<any>{
     return this.http
       .get("http://jsonplaceholder.typicode.com/users")
-      .map(this.parseResponse)
+      .map(this.parseResponseUsers)
       .catch((error: any) => Observable.throw(error.json().error || 'Server error getpictures'));
   }
 
-  parseResponse(response: Response) : User[]{
+  getPosts(keyword: string): Observable<any>{
+    return this.http
+      .get("https://jsonplaceholder.typicode.com/posts?userId="+keyword)
+      .catch((error: any) => Observable.throw(error.json().error || 'Server error getPosts'));
+  }
+
+  parseResponseUsers(response: Response) : User[]{
      if(!response.json() ) return [];
 
      return response.json().map(
@@ -58,6 +66,10 @@ export class UsersService {
      )
   }
 
-
-
+  // getPictures() : Observable<any>{
+  //   return this.http
+  //     .get("http://jsonplaceholder.typicode.com/users")
+  //     .map((response: Response) => response.json())
+  //     .catch((error: any) => Observable.throw(error.json().error || 'Server error getpictures'));
+  // }
 }
