@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let user of users">
+    {{user.name}},
+    {{user.street}}
+    <button color="primary" (click)="goToUser(user.name)">GO</button>
+  </li>
+</ul>
