@@ -1,13 +1,52 @@
-<ul>
+<!-- <div class="container">
+      <div class="col">
+        <ul>
+          <li *ngFor="let user of userPictures">
+            {{user.name}}.
+            {{user.street}}
+            <button type="button" class="btn btn-light"
+                [routerLink]="['/page']" color="primary" (click)=
+              "goToUser(
+              user.id,
+              user.thumbnailUrl
+              )">GO</button>
+            <img class="img-responsive" src={{user.thumbnailUrl}}/>
+            <img src={{user.thumbnailUrl}}><br>
+          </li>
+        </ul>
+      </div>
+</div> -->
 
-  <li *ngFor="let user of userPictures">
-    {{user.name}}.
-    {{user.street}}<br>
-    <button  [routerLink]="['/page']" color="primary" (click)=
-      "goToUser(
-      user.id,
-      user.thumbnailUrl
-      )">GO</button>
-    <img src={{user.thumbnailUrl}}><br>
-  </li>
-</ul>
+<div class="gallery">
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+      <div class="thumbnail">
+        <ul>
+          <li *ngFor="let user of userPictures">
+            <div class="desc">
+              {{user.name}}.
+              {{user.street}}
+              <button type="button" class="btn btn-light"
+                  [routerLink]="['/page']" color="primary" (click)=
+                "goToUser(
+                user.id,
+                user.thumbnailUrl
+                )">GO</button>
+            </div>
+            <img class="img-responsive" src={{user.thumbnailUrl}} alt="Lights" style="width:50%" />
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- <div class="gallery">
+  <a target="_blank" href="fjords.jpg">
+    <img src="fjords.jpg" alt="Fjords" width="300" height="200">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div> -->

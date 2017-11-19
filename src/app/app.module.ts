@@ -10,13 +10,16 @@ import {UsersService} from './users.service';
 import { PageComponent } from './page/page.component';
 
 import {routing} from './app.routing';
+import { NavbarComponent } from './navbar.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    PageComponent
+    PageComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
