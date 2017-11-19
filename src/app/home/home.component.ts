@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
 
 
   init(){
-    console.log("doint init home");
+    //console.log("doint init home");
     this.service.getUsers("http://jsonplaceholder.typicode.com/users").subscribe(
       response =>{
         this.users=response;
@@ -96,7 +96,7 @@ export class HomeComponent implements OnInit {
       }
     }
 
-    console.log(userID,userPicture);
+    //console.log(userID,userPicture);
   }
 
 

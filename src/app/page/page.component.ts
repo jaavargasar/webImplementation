@@ -35,7 +35,7 @@ export class PageComponent implements OnInit {
   }
 
   init(){
-    console.log("doing init page");
+    //console.log("doing init page");
     this.service.getUsers("http://jsonplaceholder.typicode.com/users").subscribe(
       response =>{
         for(let user of response){
