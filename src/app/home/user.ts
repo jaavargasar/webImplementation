@@ -6,6 +6,8 @@ export class User{
   companyName: string;
   catchPhrase: string;
 
+
+
   constructor(id : string,name : string,  email : string, street:string,
          companyName:string, catchPhrase : string ){
     this.id = id;

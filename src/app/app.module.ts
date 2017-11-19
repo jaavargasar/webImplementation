@@ -9,6 +9,9 @@ import { HomeComponent } from './home/home.component';
 import {UsersService} from './users.service';
 import { PageComponent } from './page/page.component';
 
+import {routing} from './app.routing';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +21,8 @@ import { PageComponent } from './page/page.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   providers: [UsersService],
   bootstrap: [AppComponent]

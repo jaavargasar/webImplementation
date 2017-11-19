@@ -1,7 +1,13 @@
 <ul>
-  <li *ngFor="let user of users">
-    {{user.name}},
-    {{user.street}}
-    <button color="primary" (click)="goToUser(user.id)">GO</button>
+
+  <li *ngFor="let user of userPictures">
+    {{user.name}}.
+    {{user.street}}<br>
+    <button  [routerLink]="['/page']" color="primary" (click)=
+      "goToUser(
+      user.id,
+      user.thumbnailUrl
+      )">GO</button>
+    <img src={{user.thumbnailUrl}}><br>
   </li>
 </ul>
