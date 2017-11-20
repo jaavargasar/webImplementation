@@ -36,7 +36,7 @@ export class PageComponent implements OnInit {
 
   init(){
     //console.log("doing init page");
-    this.service.getUsers("http://jsonplaceholder.typicode.com/users").subscribe(
+    this.service.getUsers("https://jsonplaceholder.typicode.com/users").subscribe(
       response =>{
         for(let user of response){
           if(user.id == localStorage.getItem("userId") ) {

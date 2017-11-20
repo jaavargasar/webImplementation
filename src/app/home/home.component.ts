@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
 
   init(){
     //console.log("doint init home");
-    this.service.getUsers("http://jsonplaceholder.typicode.com/users").subscribe(
+    this.service.getUsers("https://jsonplaceholder.typicode.com/users").subscribe(
       response =>{
         this.users=response;
 
