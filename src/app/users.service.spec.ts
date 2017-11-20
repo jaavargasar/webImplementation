@@ -2,10 +2,14 @@ import { TestBed, inject } from '@angular/core/testing';
 
 import { UsersService } from './users.service';
 
+import { HttpModule } from '@angular/http';
+
+import {PageComponent} from './page/page.component';
+
 describe('UsersService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [UsersService]
+      providers: [UsersService,HttpModule,PageComponent]
     });
   });
 

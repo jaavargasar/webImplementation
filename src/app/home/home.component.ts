@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
   albumId="";
   checkPrint: boolean =false;
   singleUser: User;
+  findPicture: boolean =false;
 
 
   //dependency injection, once , pattern singleton
@@ -61,7 +62,7 @@ export class HomeComponent implements OnInit {
                         url: picture['url'],
                         thumbnailUrl:picture['thumbnailUrl'],
                       }
-
+                      this.findPicture =true;
                       this.userPictures.push(newUserPicture);
                       break;
                     }
@@ -97,6 +98,14 @@ export class HomeComponent implements OnInit {
     }
 
     //console.log(userID,userPicture);
+  }
+
+
+
+  multiplication(number1,number2){ return 8;}
+
+  getFindPicture():boolean{
+    return this.findPicture;
   }
 
 
