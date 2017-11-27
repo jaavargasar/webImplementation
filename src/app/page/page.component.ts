@@ -17,7 +17,8 @@ export class PageComponent implements OnInit {
     email: "",
     street: "",
     companyName: "",
-    catchPhrase: ""
+    catchPhrase: "",
+    city: ""
   };
   photo: string="";
   posts: Post[]=[];
