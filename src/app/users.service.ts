@@ -32,7 +32,8 @@ export class UsersService {
         jsonUser['email'],
         jsonUser.address['street'],
         jsonUser.company['name'],
-        jsonUser.company['catchPhrase']
+        jsonUser.company['catchPhrase'],
+        jsonUser.address['city']
       )
     )
   }

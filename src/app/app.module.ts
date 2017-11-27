@@ -11,8 +11,9 @@ import { PageComponent } from './page/page.component';
 
 import {routing} from './app.routing';
 import { NavbarComponent } from './navbar.component';
-
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -25,10 +26,15 @@ import { NavbarComponent } from './navbar.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatCardModule
   ],
   providers: [UsersService],
   bootstrap: [AppComponent],
-  schemas:[NO_ERRORS_SCHEMA]
+  schemas:[NO_ERRORS_SCHEMA],
+  exports: [MatButtonModule, MatCheckboxModule]
 })
 export class AppModule { }

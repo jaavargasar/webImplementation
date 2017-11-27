@@ -6,7 +6,7 @@ import {UserPicture} from "./userPicture";
 import {Picture} from "./picture";
 import {Post} from "../page/post";
 import {Album} from "./album";
-
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-home',
@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
   checkPrint: boolean =false;
   singleUser: User;
   findPicture: boolean =false;
+  items=10;
 
 
   //dependency injection, once , pattern singleton
@@ -61,6 +62,7 @@ export class HomeComponent implements OnInit {
                         street: user['street'],
                         url: picture['url'],
                         thumbnailUrl:picture['thumbnailUrl'],
+                        city: user['city']
                       }
                       this.findPicture =true;
                       this.userPictures.push(newUserPicture);
