@@ -3,16 +3,8 @@ img{
     height: 120px;
 }
 
-span{
-    width: 100%;
-}
+span.myClassHey{ font-size: 15px !important; }
 
-span.myClassHey{
-   font-size: 15px !important;
-}
+i.icon-color{ color: black; }
 
-
-i.icon-color{
-  color: black;
-
-}
+span{ width: 100%; }

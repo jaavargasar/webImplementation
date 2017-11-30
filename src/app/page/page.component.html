@@ -1,40 +1,51 @@
-<div class ="container">
-  <div class ="row">
-    <div class="col s12">
-      <div class="card horizontal">
-        <div class="card-image">
-          <img src="{{photo}} ">
-        </div>
-        <div class="card-stacked">
-          <div class="card-content" >
-            {{user.name}}.<br>
-            {{user.email}}<br>
-            {{user.street}}<br>
-            {{user.companyName}}<br>
-            {{user.catchPhrase}}<br>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
+<div class="row">
+     <div class="col s6">
+       <img class="responsive-img" src="{{photo}} ">
+     </div>
+     <div class="col s5">
 
-  <div class="row">
-      <div clas="col s12" *ngFor="let post of posts, let k=index">
-        <div class="card-panel">
-          <h5>Posts{{k+1}}:
-          {{post.title}}</h5>
-          {{post.body}}
-          <a class="btn-floating btn-large waves-effect waves-light red right">
-            <i class="material-icons" (click)="post.checkVisibleComment = !post.checkVisibleComment ">add</i>
-          </a>
-
-          <div class="card-panel" *ngIf="post.checkVisibleComment">
-            <div class="card-panel" *ngFor="let comment of post.comments">
-              {{comment.email}}<br>
-              {{comment.body}}<br>
+       <div class="row">
+        <div class="col s12 m8">
+          <div class="card-panel white darken-1">
+            <div class="card-content black-text">
+              <span class="blue-text card-title"><h4> {{user.name}}. </h4> </span>
+              <p><strong> {{user.email}}</strong></p>
+              <p> <i class="material-icons icon-color">&#xE8B4;</i> {{user.street}}</p>
+              <p> Company Name: {{user.companyName}}</p>
+              <p> {{user.catchPhrase}}</p>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- comentario -->
+
+
+
+
+     </div>
+</div>
+
+
+<div class="row">
+  <div clas="col s12" *ngFor="let post of posts, let k=index">
+    <div class="card-panel">
+      <span class="blue-text card-title">
+        <h5><strong> Posts{{k+1}}: &nbsp; {{post.title}}</strong> </h5>
+      </span>
+      <h5> {{post.body}} </h5>
+      <a class="btn-floating btn-large waves-effect waves-light blue right">
+        <i class="material-icons" (click)="post.checkVisibleComment = !post.checkVisibleComment ">add</i>
+      </a>
+      <div *ngIf="post.checkVisibleComment">
+        <div class="card-panel" *ngFor="let comment of post.comments">
+          <span class="red-text card-title"> <strong> {{comment.email}}</strong> </span>
+          <br>
+          {{comment.body}}<br>
+        </div>
+      </div>
     </div>
+    <br>
+  </div>
+</div>

@@ -1,6 +1,5 @@
-img{
-    height: 200px;
-}
-a{
-    width: 100%;
-}
+img{ height: 500px; }
+
+div.myClassHey{ color: blue; }
+
+a{ width: 100%; }
