@@ -1,20 +1,18 @@
-.example-card {
-  width: 40%;
+img{
+    width: 50%;
+    height: 120px;
 }
 
-/*.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
-}*/
-
-.center{
-  width: 75%;
-  margin: 10px auto;
+span{
+    width: 100%;
 }
 
-.main-div{
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+span.myClassHey{
+   font-size: 15px !important;
+}
+
+
+i.icon-color{
+  color: black;
+
 }

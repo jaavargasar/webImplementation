@@ -1,23 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col s12 " *ngFor="let user of userPictures">
+                <div class="card" >
+                    <div class="card-image">
+                      <img  src="{{user.thumbnailUrl}}">
+                      <span class="black-text card-title myClassHey" >
 
-<div class="gallery">
-          <div *ngFor="let user of userPictures">
-            <div class="main-div">
-              <mat-card class="example-card"  layout-align="center">
-                <img mat-card-image src={{user.thumbnailUrl}} alt="Photo of a Shiba Inu">
-                <mat-card-content>
-                  <p> {{user.name}}.</p>
+                      {{user.name}}<br>
+                      <i class="material-icons icon-color">&#xE8B4;</i> {{user.street}}
 
-                    <i class="material-icons">room</i>  {{user.street}}, {{user.city}}
-                    <button mat-mini-fab color="warn" [routerLink]="['/page']" (click)=
-                      "goToUser(
-                        user.id,
-                        user.thumbnailUrl
-                      )">
-                      <i class="material-icons">add</i>
-                    </button>
+                      <!-- <i class="material-icons right" [routerLink]="['/page']" (click)=
+                        "goToUser(
+                          user.id,
+                          user.thumbnailUrl
+                        )">add</i> -->
 
-                </mat-card-content>
-              </mat-card>
-            </div>
-          </div>
+                      <a class="btn-floating right" [routerLink]="['/page']" (click)=
+                        "goToUser(
+                          user.id,
+                          user.thumbnailUrl
+                        )">
+                        <i class="material-icons">add</i>
+                      </a>
+
+                      </span>
+
+                      </div>
+                  </div>
+        </div>
+    </div>
 </div>

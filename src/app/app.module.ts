@@ -16,27 +16,26 @@ import {MatCardModule} from '@angular/material/card';
 import { NavbarComponent } from './navbar/navbar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
+import { MaterializeModule } from 'angular2-materialize';
+import { FooterComponent } from './footer/footer.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PageComponent,
     NavbarComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     routing,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    MatCardModule,
-    MatToolbarModule
+    MaterializeModule
   ],
   providers: [UsersService],
   bootstrap: [AppComponent],
   schemas:[NO_ERRORS_SCHEMA],
-  exports: [MatButtonModule, MatCheckboxModule]
 })
 export class AppModule { }

@@ -55,6 +55,7 @@ export class PageComponent implements OnInit {
                   response =>{
                       this.comments = response;
                       post.setComment(this.comments);
+                      post.setFalseVisibleComment();
                   },
                   error => console.log(error)
                 )
